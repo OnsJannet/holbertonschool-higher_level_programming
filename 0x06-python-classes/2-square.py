@@ -1,7 +1,13 @@
 #!/usr/bin/python3
+"""Defining a class (Square)"""
+
+
 class Square:
-    """defines a square and checks if its a digit >= 0"""
+    """Square class
+    Attributes:
+    (size): the size of the square"""
     def __init__(self, size=0):
+        """size: size for __size attribute of instance class"""
         if type(size) != int:
             raise TypeError("size must be an integer")
         elif size < 0:
