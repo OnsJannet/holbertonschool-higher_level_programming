@@ -75,8 +75,8 @@ class Square:
                 for column in range(self.__position[0]):
                     new_str += " "
                 for column in range(self.__size):
-                    new_str +="#"
+                    new_str += "#"
                 new_str += "\n"
         else:
             new_str += "\n"
-        return new_str [:-1]
+        return new_str[:-1]
