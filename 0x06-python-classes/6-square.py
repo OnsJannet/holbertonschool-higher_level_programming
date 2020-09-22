@@ -10,6 +10,7 @@ class Square:
     def __init__(self, size=0, position=(0, 0)):
         """
         size: size for __size attribute of instance class
+        position: position for __position attribute of instance class
         """
         self.__size = size  # this attribute is private
         self.position = position
@@ -37,7 +38,11 @@ class Square:
     def my_print(self):
         """ prints in stdout the square with the character # """
         if self.__size > 0:
+            for row in range(self.__position[1]):
+                print()
             for row in range(self.__size):
+                for column in range (self.__position[0]):
+                    print(" ", end="")
                 for column in range(self.__size):
                     print("#", end="")
                 print()
