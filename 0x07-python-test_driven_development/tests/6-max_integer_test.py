@@ -22,7 +22,7 @@ class TestMaxInteger(unittest.TestCase):
       self.assertAlmostEqual(max_integer("Camila"), "m")
 
   def test_atuples(self):
-      self.assertEqual(max_integer((1, 13, 14, 2)), 14)
+      self.assertEqual(max_integer((1, 13, 14, 3)), 14)
 
   def test_large_intbeg(self):
       self.assertEqual(max_integer([999999999999999, 1]), 999999999999999)
