@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def add_integer(a, b):
     """
     add_integer - Adss Two Integers
@@ -11,4 +12,3 @@ def add_integer(a, b):
     else:
         raise TypeError("{:} must be an integer"
                         .format('b' if isinstance(a, (int, float)) else 'a'))
-
