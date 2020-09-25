@@ -45,4 +45,3 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 # divide by float(inf)
 >>> print(matrix_divided([[10, 9, 8], [11, 33, 44]], float('inf')))
 [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
-

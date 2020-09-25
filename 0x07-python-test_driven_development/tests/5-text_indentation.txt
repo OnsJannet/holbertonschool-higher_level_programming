@@ -1,0 +1,60 @@
+"""
+This is the "4. Text indentation" module.
+===================================
+
+The "4. Text indentation " module supplies one function, text_indentation().  For example,
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+"""
+#Long Str
+>>> text_indentation("""Karla Camila Cabello Estrabao,  known professionally as Camila Cabello. \
+...  is a Cuban-American singer and songwriter. She rose to prominence as a member of the girl group Fifth Harmony. \""")
+Karla Camila Cabello Estrabao,  known professionally as Camila Cabello.
+<BLANKLINE>    
+ is a Cuban-American singer and songwriter.
+<BLANKLINE>
+She rose to prominence as a member of the girl group Fifth Harmony
+
+>>> text_indentation('   Hello.      how   ?  you:    Camila')
+Hello.
+<BLANKLINE>
+how   ?
+<BLANKLINE>
+you:
+<BLANKLINE>
+Camila
+
+# all ......
+>>> text_indentation('.......')
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+
+# No Str
+>>> text_indentation(3)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+# str
+>>> text_indentation("""Hello:\n\nMila.""")
+Hello:
+<BLANKLINE>
+Mila.
+<BLANKLINE>
+
+# No Punctuation
+>>> text_indentation("there is no punctuation here")
+there is no punctuation here
