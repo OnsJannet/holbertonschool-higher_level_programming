@@ -1,0 +1,62 @@
+"""
+This is the "0-add_integer" module.
+===================================
+
+The "0-add_integer" module supplies one function, add_integer(,).  For example,
+
+>>> add_integer = __import__('add_integer_6').add_integer
+
+"""
+# add two positive integers:
+>>> add_integer(1, 2)
+    3
+
+# add two negative integers:
+>>> add_integer(-5, -5)
+    -10
+
+# substract a postive integer and a negative integer:
+>>> add_integer(100, -2)
+    89
+
+# a positive int
+    >>> add_integer(2)
+    100
+
+# substract or add a float and a negative integer:
+>>> add_integer(100.3, -2)
+    100
+
+# adds long integers:
+>>> add_integer(999999999999, 1)
+    1000000000000
+
+# add a positive integer and a string:
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+# add a string and a positive integer
+>>> add_integer("School", 4)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+# add a string and a positive integer
+>>> add_integer("School", 4)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+# None
+>>> add_integer(None, None)
+Traceback (most recent call last):
+		  ...
+TypeError: a must be an integer
+
+# Overflow
+    >>> add_integer(float('inf'), 4)
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer

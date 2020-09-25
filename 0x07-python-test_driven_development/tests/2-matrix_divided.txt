@@ -1,0 +1,13 @@
+"""
+This is the "1. Divide a matrix" module.
+===================================
+
+The "1. Divide a matrix" module supplies one function, matrix_divided(,).  For example,
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+"""
+# the matrix
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+
+#
