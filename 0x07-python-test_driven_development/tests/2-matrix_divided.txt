@@ -10,4 +10,39 @@ The "1. Divide a matrix" module supplies one function, matrix_divided(,).  For e
 # the matrix
 >>> matrix = [[1, 2, 3], [4, 5, 6]]
 
-#
+# divide by 3
+>>> print(matrix_divided(matrix, 3))
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+# divid by 2
+>>> print(matrix_divided(matrix, 2))
+[[0.5, 1, 1.5], [2, 2.5, 3]]
+
+# str, divide by int
+>>> print(matrix_divided([[11, 'Milo', 3], ['Mila', 'Milo', 'Camz']], 1))
+Traceback (most recent call last):
+          ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# Empty Martix
+>>> matrix_divided([[]], 3)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# Diffrent Sizes Martix
+>>> matrix_divided([[1, 2, 3], [4, 5]], 3)
+    Traceback (most recent call last):
+        ...
+    TypeError: Each row of the matrix must have the same size
+
+# Div is zero
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
+    Traceback (most recent call last):
+        ...
+    ZeroDivisionError: division by zero
+
+# divide by float(inf)
+>>> print(matrix_divided([[10, 9, 8], [11, 33, 44]], float('inf')))
+[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
