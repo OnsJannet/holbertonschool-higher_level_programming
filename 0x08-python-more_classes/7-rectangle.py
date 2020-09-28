@@ -3,8 +3,6 @@
 
 
 class Rectangle:
-    number_of_instances = 0
-    print_symbol = '#'
     """Rectangle class
     Attributes:
     @width: the width of the rectangle
@@ -17,6 +15,9 @@ class Rectangle:
     __str__: Defines Behavior during str() & print()
     __repr__:return a str rep of the rectangle
     __del__: used during deletion it print a msg"""
+
+    number_of_instances = 0
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         """ Rectangle Instantiation """
