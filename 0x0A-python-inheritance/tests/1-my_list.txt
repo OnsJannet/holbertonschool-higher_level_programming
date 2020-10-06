@@ -1,8 +1,7 @@
-"""
+
 This is the "1-my_list" module.
-===================================
-import module:
-         >>> MyList = __import__("1-my_list").MyList
+Import the module:
+>>> MyList = __import__('1-my_list').MyList
 
 Check print_sorted with empty list
 >>> my_list = MyList()
