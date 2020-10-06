@@ -1,33 +1,125 @@
 This is the "1-my_list" module.
 ===================================
 
-Import the module:
+Import the module
 >>> MyList = __import__('1-my_list').MyList
 
-@@ -46,14 +48,6 @@ Check that object can be created
+Check print_sorted with empty list
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
+
+Check that object can be created
+>>> my_list = MyList()
 >>> my_list
 []
 
-Printing sorted list of integers and strings should throw error
->>> my_list = MyList()
->>> my_list.append("Milo")
->>> my_list.append(7)
->>> my_list.print_sorted()
+Check that MyList is only executed with zero argum
+>>> my_list = MyList(5)
 Traceback (most recent call last):
-TypeError: unorderable types: int() < str()
+TypeError: 'int' object is not iterable
 
-Add strings
+Check that list printed correctly
 >>> my_list = MyList()
->>> my_list.append("Milo")
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
 >>> print(my_list)
-['Milo']
+[1, 4, 2, 3, 5]
+
+Check that sorted list printed correctly
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+
+Check that list is unmodified after print_sorted call
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+Check that pre-sorted list is printed correctly
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> print(my_list)
+[1, 2, 3]
+
+Check that negative numbers may be added to list
+>>> my_list = MyList()
+>>> my_list.append(-1)
+>>> my_list.append(-4)
+>>> my_list.append(-2)
+>>> my_list.append(-3)
+>>> my_list.append(-5)
+>>> print(my_list)
+[-1, -4, -2, -3, -5]
+
+Check that sorted list of negative numbers may be printed
+>>> my_list.print_sorted()
+[-5, -4, -3, -2, -1]
+
+Check that you can print an empty list
+>>> my_list = MyList()
+>>> print(my_list)
+[]
+
+Check that no arguments are passed to print_sorted
+>>> my_list.print_sorted(1)
+Traceback (most recent call last):
+TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+Check that mylist_append only executes with arguments
+>>> my_list.append()
+Traceback (most recent call last):
+TypeError: append() takes exactly one argument (0 given)
+
+Check that passing in None throws an error
+>>> my_list = MyList(None)
+Traceback (most recent call last):
+TypeError: 'NoneType' object is not iterable
+
+Check that object created is of the class
+>>> my_list = MyList()
+>>> type(my_list)
+<class '1-my_list.MyList'>
+
 Changing an element in object works
 >>> my_list = MyList()
 >>> my_list.append(1)
 >>> my_list[0] = (2)
 >>> print(my_list)
 [2]
+
+Add strings
+>>> my_list = MyList()
+>>> my_list.append("Milo")
+>>> print(my_list)
+['Milo']
+
+Add strings and integers
+>>> my_list = MyList()
+>>> my_list.append("Milo")
+>>> my_list.append(7)
+>>> print(my_list)
+['Milo', 7]
+
+Check that pre-sorted list is printed correctly with print_sorted
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.print_sorted()
+[1, 2, 3]
+
+Remove an element in object works
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.remove(1)
+>>> print(my_list)
+[]
+
 Check that passing in more than 1 list throws an error
->>> my_list = MyList([1, 2], [3, 4])
+>>> my_list = MyList([1, 4], [3, 8])
 Traceback (most recent call last):
 TypeError: list() takes at most 1 argument (2 given)
