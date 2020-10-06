@@ -10,4 +10,4 @@ class MyList(list):
     prints a sorted list in an ascending order
     """
     def print_sorted(self):
-        print(sorted(self))
+        return print(sorted(self))
