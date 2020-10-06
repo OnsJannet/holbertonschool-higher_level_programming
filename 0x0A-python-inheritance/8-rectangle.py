@@ -21,9 +21,11 @@ class BaseGeometry:
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
 
-class Rectangle(BaseGeometry):    
+
+class Rectangle(BaseGeometry):
     def __init__(self, width, height):
-        """ Init Args:
+        """
+        Init Args:
         Widh : an integer
         height : an integer
         """
