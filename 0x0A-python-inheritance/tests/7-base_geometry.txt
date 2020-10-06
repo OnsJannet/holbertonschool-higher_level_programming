@@ -5,10 +5,10 @@ This is the "7-my_list" module.
 >>> print(__import__('7-base_geometry').BaseGeometry.__doc__)
 Geometry class with maths operations
 
->>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> Test_Class = __import__('7-base_geometry').BaseGeometry
 
 
->>> test = BaseGeometry
+>>> test = Test_Class()
 >>> test.integer_validator("my_int", 12)
 >>> test.integer_validator("width", 89)
 
