@@ -10,6 +10,6 @@ class BaseGeometry:
     attr1(area): Raises an exception
     """
 
-    def area(self):   
-        """Raises an Exception"""    
+    def area(self):
+        """Raises an Exception"""
         raise Exception("area() is not implemented")
