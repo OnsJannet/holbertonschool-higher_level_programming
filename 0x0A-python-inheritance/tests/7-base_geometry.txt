@@ -8,7 +8,7 @@ Geometry class with maths operations
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
->>> test = Test_Class()
+>>> test = BaseGeometry
 >>> test.integer_validator("my_int", 12)
 >>> test.integer_validator("width", 89)
 
