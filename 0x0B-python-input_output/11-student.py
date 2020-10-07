@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-"""a function that saves object to a file"""
 
 
 class Student:
