@@ -2,6 +2,8 @@
 """a function that return the JSON rep of an object str"""
 
 import json
+
+
 def to_json_string(my_obj):
     """return the JSON rep of an object
     my_obj: obj
