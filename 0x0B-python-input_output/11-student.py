@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""This modle creates a class named Student"""
 
 
 class Student:
@@ -9,7 +9,7 @@ class Student:
     age: the age of a student
     """
     def __init__(self, first_name, last_name, age):
-        """Init an instance"""
+        """Initializes an instance"""
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
