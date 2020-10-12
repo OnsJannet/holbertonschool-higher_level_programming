@@ -97,4 +97,14 @@ class Rectangle(Base):
             self.id, self.__x, self.__y, self.__width, self.__height)
         return string
 
+    def update(self, *args):
+        update =("id", "width", "height", "x", "y")
+        length = len(args)
+        for i in range (length):
+            setattr(self,update[i], args[i])
+
+
+        
     
+
+
