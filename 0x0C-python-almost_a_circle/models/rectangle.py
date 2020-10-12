@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Base"""
+""" Rectangle Module"""
 
 
 from models.base import Base
@@ -97,14 +97,14 @@ class Rectangle(Base):
             self.id, self.__x, self.__y, self.__width, self.__height)
         return string
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
+        """Returns Arguments"""
         update =("id", "width", "height", "x", "y")
         length = len(args)
-        for i in range (length):
-            setattr(self,update[i], args[i])
-
-
-        
-    
-
-
+        if args:
+            for i in range (length):
+                setattr(self,update[i], args[i])
+        elif kwargs is not None:
+            for key, value in kwargs.items():
+                if key in update:
+                    setattr(self, key, value)
