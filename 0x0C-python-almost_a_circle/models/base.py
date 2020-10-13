@@ -42,7 +42,7 @@ class Base:
         """returns the list of the JSON string representation"""
         if json_string is None:
             return loads([])
-        return json.loads(json_string)
+        return loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
