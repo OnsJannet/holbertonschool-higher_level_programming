@@ -4,6 +4,7 @@
 
 from json import dumps, loads
 
+
 class Base:
     """ 1st classs Base
     __nb_objects : a class attribute
@@ -24,4 +25,14 @@ class Base:
         if list_dictionaries is None:
             return dumps([])
         return dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """ saves a json string to a json file """
+        n_list = []
+        file_name = cls.__name__ + '.json'
+        if list_objs:
+            n_list = [data.to_dictionary() for data in list_objs]
+        with open(file_name, 'w', encoding='utf-8') as my_file:
+            my_file.write(Base.to_json_string(new_list))
 
