@@ -3,6 +3,7 @@
 
 
 from json import dumps, loads
+import csv
 
 
 class Base:
@@ -70,3 +71,30 @@ class Base:
                 return n_list
         except Exception:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """writes the CSV string representation of list_objs to a file"""
+        with open(cls.__name__ + ".csv", "w", newline='') as my_csv_file:
+            if cls.__name__ == "Rectangle":
+                components = ['id', 'width', 'height', 'x', 'y']
+            elif cls.__name__ == "Square":
+                components = ['id', 'size', 'x', 'y']
+            csv_writer = csv.DictWriter(my_csv_file, fieldnames=components)
+            csv_writer.writeheader()
+            if list_objs is not None:
+                for model in list_objs:
+                    csv_writer.writerow(model.to_dictionary())
+    @classmethod
+    def load_from_file_csv(cls):
+        if path.exists(cls.__name__ + ".csv") is False:
+            return []
+        with open(cls.__name__ + ".csv", "r", newline='') as f:
+            listofinstances = []
+            reader = csv.DictReader(f)
+            for row in reader:
+                for key, value in row.items():
+                    row[key] = int(value)
+                listofinstances.append(cls.create(**row))
+        return listofinstances
+        
