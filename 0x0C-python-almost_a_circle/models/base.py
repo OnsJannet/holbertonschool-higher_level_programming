@@ -2,6 +2,8 @@
 """ Module of Base """
 
 
+from json import dumps, loads
+
 class Base:
     """ 1st classs Base
     __nb_objects : a class attribute
@@ -15,3 +17,11 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """ Returns json str rep of a dictionary """
+        if list_dictionaries is None:
+            return dumps([])
+        return dumps(list_dictionaries)
+
