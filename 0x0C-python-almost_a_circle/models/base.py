@@ -85,6 +85,7 @@ class Base:
             if list_objs is not None:
                 for model in list_objs:
                     csv_writer.writerow(model.to_dictionary())
+
     @classmethod
     def load_from_file_csv(cls):
         if path.exists(cls.__name__ + ".csv") is False:
@@ -97,4 +98,3 @@ class Base:
                     row[key] = int(value)
                 listofinstances.append(cls.create(**row))
         return listofinstances
-
