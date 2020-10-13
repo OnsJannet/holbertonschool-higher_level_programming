@@ -35,4 +35,11 @@ class Base:
             n_list = [data.to_dictionary() for data in list_objs]
         with open(file_name, 'w', encoding='utf-8') as my_file:
             my_file.write(Base.to_json_string(new_list))
+    
+    @staticmethod
+    def from_json_string(json_string):
+        """returns the list of the JSON string representation"""
+        if json_string is None:
+            return loads([])
+        return loads(json_string)   
 
