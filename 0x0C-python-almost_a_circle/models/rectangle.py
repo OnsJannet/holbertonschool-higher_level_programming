@@ -11,8 +11,8 @@ class Rectangle(Base):
         """ Initializes args
         width is the width of the rectangle
         height is the height of the rectangle
-        x is x
-        y is y
+        x is a space
+        y is a space
         """
         super().__init__(id)
         self.width = width
@@ -79,7 +79,7 @@ class Rectangle(Base):
     def area(self):
         """returns the area of the rectangle"""
         return self.__height * self.__width
-    
+
     def display(self):
         """ Prints a rectangle  """
         for y_space in range(self.__y):
@@ -90,7 +90,7 @@ class Rectangle(Base):
             for row in range(self.__width):
                 print("#", end='')
             print()
-    
+
     def __str__(self):
         """Returns the str representation of the Rectangle"""
         string = "[Rectangle] ({}) {}/{} - {}/{}".format(
@@ -99,11 +99,11 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """Returns Arguments"""
-        update =("id", "width", "height", "x", "y")
+        update = ("id", "width", "height", "x", "y")
         length = len(args)
         if args:
-            for i in range (length):
-                setattr(self,update[i], args[i])
+            for i in range(length):
+                setattr(self, update[i], args[i])
         elif kwargs is not None:
             for key, value in kwargs.items():
                 if key in update:
@@ -112,6 +112,5 @@ class Rectangle(Base):
     def to_dictionary(self):
         """ Returns the rectangle's dict """
         r_dict = {'x': self.__x, 'y': self.__y, 'id': self.id,
-                     'height': self.__height, 'width': self.__width}
+                  'height': self.__height, 'width': self.__width}
         return r_dict
-

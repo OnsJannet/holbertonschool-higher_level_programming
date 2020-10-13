@@ -35,11 +35,21 @@ class Base:
             n_list = [data.to_dictionary() for data in list_objs]
         with open(file_name, 'w', encoding='utf-8') as my_file:
             my_file.write(Base.to_json_string(new_list))
-    
+
     @staticmethod
     def from_json_string(json_string):
         """returns the list of the JSON string representation"""
         if json_string is None:
             return loads([])
-        return loads(json_string)   
+        return loads(json_string)
 
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set"""
+        if cls.__name__ is "Rectangle":
+            dummy = cls(2, 5)
+        elif cls.__name__ is "Square":
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return dummy
+        
