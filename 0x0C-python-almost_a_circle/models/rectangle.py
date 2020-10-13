@@ -108,3 +108,10 @@ class Rectangle(Base):
             for key, value in kwargs.items():
                 if key in update:
                     setattr(self, key, value)
+
+    def to_dictionary(self):
+        """ Returns the rectangle's dict """
+        r_dict = {'x': self.__x, 'y': self.__y, 'id': self.id,
+                     'height': self.__height, 'width': self.__width}
+        return r_dict
+
