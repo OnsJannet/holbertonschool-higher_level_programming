@@ -91,7 +91,7 @@ class Base:
             return []
         with open(cls.__name__ + ".csv", "r", newline='') as my_file:
             listofinstances = []
-            reader = csv.DictReader(my_file)
+            csv_reader = csv.DictReader(my_file)
             for row in reader:
                 for key, value in row.items():
                     row[key] = int(value)
