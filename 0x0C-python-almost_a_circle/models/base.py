@@ -55,13 +55,21 @@ class Base:
         return dummy
 
     @classmethod
-    def load_from_file(cls):
-        """ returns a list of instances"""
-        filename = cls.__name__ + '.json'
+    def save_to_file_csv(cls, list_objs):
+        """ writes the CSV string representation of list_objs to a file """
+        n_list = []
+        if list_objs:
+            n_list = [data.to_dictionary() for data in list_objs]
+        with open(cls.__name__ + '.csv', 'w', encoding='utf-8') as my_csv_file:
+            my_csv_file.write(Base.to_json_string(n_list))
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ deserializes in CSV """
         try:
-            with open(filename, 'r', encoding='utf-8') as my_file:
+            with open(cls.__name__ + '.csv', 'r', encoding='utf-8') as my_csv_file:
                 n_list = []
-                file_dict = my_file.read()
+                file_dict = my_csv_file.read()
                 if file_dict is None or len(file_dict) == 0:
                     return []
                 file_data = cls.from_json_string(file_dict)
@@ -71,30 +79,3 @@ class Base:
                 return n_list
         except Exception:
             return []
-
-    @classmethod
-    def save_to_file_csv(cls, list_objs):
-        """writes the CSV string representation of list_objs to a file"""
-        with open(cls.__name__ + ".csv", "w", newline='') as my_csv_file:
-            if cls.__name__ == "Rectangle":
-                components = ['id', 'width', 'height', 'x', 'y']
-            elif cls.__name__ == "Square":
-                components = ['id', 'size', 'x', 'y']
-            csv_writer = csv.DictWriter(my_csv_file, fieldnames=components)
-            csv_writer.writeheader()
-            if list_objs is not None:
-                for model in list_objs:
-                    csv_writer.writerow(model.to_dictionary())
-
-    @classmethod
-    def load_from_file_csv(cls):
-        if path.exists(cls.__name__ + ".csv") is False:
-            return []
-        with open(cls.__name__ + ".csv", "r", newline='') as my_file:
-            listofinstances = []
-            csv_reader = csv.DictReader(my_file)
-            for row in reader:
-                for key, value in row.items():
-                    row[key] = int(value)
-                listofinstances.append(cls.create(**row))
-        return listofinstances
