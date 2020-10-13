@@ -34,7 +34,7 @@ class Base:
         if list_objs:
             n_list = [data.to_dictionary() for data in list_objs]
         with open(file_name, 'w', encoding='utf-8') as my_file:
-            my_file.write(Base.to_json_string(new_list))
+            my_file.write(Base.to_json_string(n_list))
 
     @staticmethod
     def from_json_string(json_string):
@@ -52,4 +52,21 @@ class Base:
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
-        
+
+    @classmethod
+    def load_from_file(cls):
+        """ returns a list of instances"""
+        filename = cls.__name__ + '.json'
+        try:
+            with open(filename, 'r', encoding='utf-8') as my_file:
+                n_list = []
+                file_dict = my_file.read()
+                if file_dict is None or len(file_dict) == 0:
+                    return []
+                file_data = cls.from_json_string(file_dict)
+                for dictionary in file_data:
+                    instance = cls.create(**dictionary)
+                    n_list.append(instance)
+                return n_list
+        except Exception:
+            return []
