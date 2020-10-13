@@ -67,7 +67,8 @@ class Base:
     def load_from_file_csv(cls):
         """ deserializes in CSV """
         try:
-            with open(cls.__name__ + '.csv', 'r', encoding='utf-8') as my_csv_file:
+            with open(cls.__name__ + '.csv', 'r',
+                      encoding='utf-8') as my_csv_file:
                 n_list = []
                 file_dict = my_csv_file.read()
                 if file_dict is None or len(file_dict) == 0:
