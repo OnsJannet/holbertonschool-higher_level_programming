@@ -89,12 +89,12 @@ class Base:
     def load_from_file_csv(cls):
         if path.exists(cls.__name__ + ".csv") is False:
             return []
-        with open(cls.__name__ + ".csv", "r", newline='') as f:
+        with open(cls.__name__ + ".csv", "r", newline='') as my_file:
             listofinstances = []
-            reader = csv.DictReader(f)
+            reader = csv.DictReader(my_file)
             for row in reader:
                 for key, value in row.items():
                     row[key] = int(value)
                 listofinstances.append(cls.create(**row))
         return listofinstances
-        
+
