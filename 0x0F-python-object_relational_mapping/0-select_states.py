@@ -10,7 +10,7 @@ if __name__ == "__main__":
                          passwd=argv[2],
                          db=argv[3])
     c = db.cursor()
-    c.execute("SELECT * FROM states WHERE ORDER BY id ASC")
+    c.execute("SELECT * from states ORDER BY states.id")
     for state in c.fetchall():
         print(state)
     c.close()
