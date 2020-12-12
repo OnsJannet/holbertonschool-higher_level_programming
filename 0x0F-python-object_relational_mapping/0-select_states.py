@@ -10,7 +10,7 @@ db = MySQLdb.connect(host="localhost",
                      passwd=argv[2],
                      db=argv[3])
 c = db.cursor()
-c.execute("SELECT * FROM states WHERE id ORDER BY ASC")
+c.execute("SELECT * FROM states WHERE ORDER BY id ASC")
 for state in c.fetchall():
     print(state)
 c.close()
