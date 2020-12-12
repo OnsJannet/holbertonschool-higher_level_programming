@@ -21,5 +21,6 @@ if __name__ == "__main__":
     ls.remove(ls[0])
     for x in ls:
         print(", ", x[0], end="")
+    print ("")
     c.close()
     db.close()
