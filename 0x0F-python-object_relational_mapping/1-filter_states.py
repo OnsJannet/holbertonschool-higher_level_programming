@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """ Python x MySQL : Listing specific data from a database using args """
 import MySQLdb
-import sys
+from sys import argv
 
+if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost",
                          port=3306,
                          user=argv[1],
