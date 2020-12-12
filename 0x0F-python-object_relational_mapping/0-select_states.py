@@ -3,11 +3,11 @@
 import MySQLdb
 import sys
 
-db = MySQLdb.connect(user=argv[0],
-                     passwd=argv[1],
-                     db=argv[2])
+db = MySQLdb.connect(user=argv[1],
+                     passwd=argv[2],
+                     db=argv[3])
 c = db.cursor()
-c.execute("SELECT * FROM states")
+c.execute("SELECT * FROM states WHERE name ORDER BY ASC")
 for state in c.fetchall():
     print(state)
 c.close()
