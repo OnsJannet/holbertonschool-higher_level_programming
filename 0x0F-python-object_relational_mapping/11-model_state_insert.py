@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Python x SQLAlchemy  : Listing data from table """
+""" Python x SQLAlchemy  : adds data to a table """
 from sys import argv
 from model_state import Base, State
 from sqlalchemy import create_engine
