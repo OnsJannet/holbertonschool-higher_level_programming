@@ -3,7 +3,7 @@
 // prints a square
 
 const count = process.argv[2];
-const character = 'x';
+const character = 'X';
 if (isNaN(count)) {
   console.log('Missing size');
 } else {
