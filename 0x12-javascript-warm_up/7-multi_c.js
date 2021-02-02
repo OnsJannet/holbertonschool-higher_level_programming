@@ -3,8 +3,11 @@
 // prints 3 phrases.
 
 const count = process.argv[2];
-if (parseInt(count)) {
-  console.log('C is fun \n'.repeat(count));
-} else {
+const string = 'C is fun';
+if (isNaN(count)) {
   console.log('Missing number of occurrences');
+} else {
+  for (let repeat = 0; repeat < count; repeat++) {
+    console.log(string);
+  }
 }
