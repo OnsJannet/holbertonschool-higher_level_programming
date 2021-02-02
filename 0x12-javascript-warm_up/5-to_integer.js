@@ -2,7 +2,7 @@
 
 // prints a message depending of the number of arguments passed:
 
-let number = process.argv[2];
+const number = process.argv[2];
 if (parseInt(number)) {
   console.log('My number: ' + number);
 } else {
