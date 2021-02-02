@@ -2,5 +2,5 @@
 
 // prints "Javasscript is amazing" using let
 
-let myVar = "Javascript is amazing"
+let myVar = "Javascript is amazing";
 console.log(myVar);
