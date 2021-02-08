@@ -6,7 +6,7 @@ class Square extends require('./5-square.js') {
     if (c === undefined) {
       this.print();
     } else {
-      for (let count = 0; count < this.height; count++) {
+      for (let count = 0; i < this.height; count++) {
         console.log('C'.repeat(this.width));
       }
     }
