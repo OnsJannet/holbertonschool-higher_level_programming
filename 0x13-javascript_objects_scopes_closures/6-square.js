@@ -10,8 +10,8 @@ class Square extends require('./4-rectangle') {
     if (c === undefined) {
       this.print();
     } else {
-      for (let count = 0; count < this.height; count++) {
-        console.log('C'.repeat(this.width));
+      for (let count = 0; count < this.width; count++) {
+        console.log('C'.repeat(this.height));
       }
     }
   }
