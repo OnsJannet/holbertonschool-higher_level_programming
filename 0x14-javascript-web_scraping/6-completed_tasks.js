@@ -2,7 +2,6 @@
 
 // compute the number of tasks completed by user id.
 
-const url = process.argv[2];
 const request = require('request');
 request(process.argv[2], function (error, response, body) {
   if (response.statusCode === 200) {
