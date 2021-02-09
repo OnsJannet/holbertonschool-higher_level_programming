@@ -1,9 +1,13 @@
 #!/usr/bin/node
 
-//print the title of a Star Wars movie.
+// print the title of a Star Wars movie.
 
-url = 'https://swapi-api.hbtn.io/api/films/';
+const url = 'https://swapi-api.hbtn.io/api/films/';
 const request = require('request');
 request(url + process.argv[2], function (error, response, body) {
-  console.log(error || JSON.parse(body).title);
+  if (response.statusCode === 200) {
+    console.log(JSON.parse(body).title);
+  } else {
+    console.log(error);
+  }
 });
